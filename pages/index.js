@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
+import Contents from "../components/Contents";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ contents }) {
@@ -16,6 +17,7 @@ export default function Home({ contents }) {
       {/* 메뉴 */}
       <Nav />
       {/* 컨텐츠 */}
+      <Contents contents={contents} />
     </div>
   );
 }
@@ -24,14 +26,13 @@ export async function getServerSideProps(context) {
   const menu = context.query.menu;
 
   const BASE_URL = "https://api.themoviedb.org";
-  const API_KEY = "25695d3ad1911085af6aad954e05bc2f";
+  const API_KEY = process.env.API_KEY;
 
   const res = await fetch(
     `${BASE_URL}/3/discover/movie?api_key=${API_KEY}&language=kr&with_genres=${menu}`
   );
   const data = await res.json();
 
-  console.log(data);
   return {
     props: {
       contents: data.results,

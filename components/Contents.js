@@ -1,19 +1,10 @@
-import Image from "next/image";
+import Thumbnail from "./Thumbnail";
 
 const Contents = ({ contents }) => {
-  const BASE_URL = "https://image.tmdb.org/t/p/original/";
-
   return (
-    <div>
-      This is contents
-      {contents.map((result) => (
-        <Image
-          key={result.id}
-          layout="responsive"
-          src={`${BASE_URL}${result.backdrop_path || result.poster_path}`}
-          height={360}
-          width={640}
-        />
+    <div className="px-5 my-10 sm:grid md:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
+      {contents.map((content) => (
+        <Thumbnail key={content.id} content={content} />
       ))}
     </div>
   );

@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 
 const BASE_URL = `https://api.themoviedb.org/3/genre/movie/list`;
-const API_KEY = `25695d3ad1911085af6aad954e05bc2f`;
+const API_KEY = process.env.API_KEY;
 
 const fetcher = async (url) => {
   const res = await fetch(url);
