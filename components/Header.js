@@ -2,8 +2,8 @@ import {
   HomeIcon,
   SearchIcon,
   UserIcon,
-  CubeIcon,
-  MailIcon,
+  FilmIcon,
+  CodeIcon,
 } from "@heroicons/react/outline";
 import HeaderItem from "./HeaderItem";
 
@@ -11,14 +11,14 @@ const Header = () => {
   return (
     <header className="flex flex-col sm:flex-row m-5 justify-between items-center">
       <div className="flex cursor-pointer transform hover:scale-105">
-        <CubeIcon className="h-20" />
-        <p className="text-7xl font-extrabold">HINT</p>
+        <CodeIcon className="h-20" />
+        <p className="text-7xl font-extrabold">SSB</p>
       </div>
       <div className="flex flex-grow justify-evenly max-w-sm">
         <HeaderItem title="Home" Icon={HomeIcon} />
-        <HeaderItem title="MAIL" Icon={MailIcon} />
-        <HeaderItem title="SEARCH" Icon={SearchIcon} />
-        <HeaderItem title="ACCOUNT" Icon={UserIcon} />
+        <HeaderItem title="Movie" Icon={FilmIcon} />
+        <HeaderItem title="Search" Icon={SearchIcon} />
+        <HeaderItem title="Account" Icon={UserIcon} />
       </div>
     </header>
   );
