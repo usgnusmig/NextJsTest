@@ -32,7 +32,7 @@ const Nav = () => {
             index < 5 && (
               <h2
                 key={menu.id}
-                onClick={() => router.push(`/?menu=${menu.id}`, "/")}
+                onClick={() => router.push(`/Movies/?menu=${menu.id}`, "/")}
                 className="last:pr-24 cursor-pointer transition duration-100 transform hover:scale-125 hover:text-white active:text-red-500"
               >
                 {menu.name}

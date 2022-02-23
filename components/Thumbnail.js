@@ -11,6 +11,8 @@ const Thumbnail = ({ content }) => {
         src={`${BASE_URL}${content.backdrop_path || content.poster_path}`}
         height={360}
         width={640}
+        priority={true}
+        alt={content.title}
       />
 
       <div className="p-2">
